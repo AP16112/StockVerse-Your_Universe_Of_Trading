@@ -41,3 +41,5 @@ export default function RightSection({imageURL, productName, productDescription,
 // React Props :-
 // Props are the imformation that you pass to a JSX tag in the form of attributes(like HTML attributes) just like we pass the arguments in fn in JS.
 // SO the information that we pass during component call or component rendering are actually the React Props
+
+
