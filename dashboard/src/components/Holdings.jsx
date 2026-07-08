@@ -41,7 +41,7 @@ export default function Holdings() {
                             <td>{stock.price.toFixed(2)}</td>
                             <td>{curValue.toFixed(2)}</td>
                             <td className={profClass}>
-                            {(curValue - stock.avg * stock.qty).toFixed(2)}
+                                {(curValue - stock.avg * stock.qty).toFixed(2)}
                             </td>
                             <td className={profClass}>{stock.net}</td>
                             <td className={dayClass}>{stock.day}</td>

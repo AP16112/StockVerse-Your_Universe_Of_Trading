@@ -205,11 +205,11 @@ code {
   text-align: left;
 }
 
-.order-table td.profit {
+.order-table .profit {
   color: rgb(72, 194, 55);
 }
 
-.order-table td.loss {
+.order-table .loss {
   color: rgb(250, 118, 78);
 }
 
