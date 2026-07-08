@@ -33,6 +33,7 @@ export default function Holdings() {
                     const dayClass = stock.isLoss ? "loss" : "profit";
 
                     return (
+                        // In React, the key prop is used when rendering lists of elements (like your <tr> rows) to help React efficiently update and re-render the DOM.
                         <tr key={index}>
                             <td>{stock.name}</td>
                             <td>{stock.qty}</td>
