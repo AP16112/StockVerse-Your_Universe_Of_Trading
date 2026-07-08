@@ -1,0 +1,23 @@
+
+.company-links a,
+.support-links a,
+.account-links a {
+    text-decoration: none;
+    color: #424242;
+}
+
+
+.company-links a:hover,
+.support-links a:hover, 
+.account-links a:hover {
+    color: #387ed1 !important;
+}
+
+
+.company-links p,
+.support-links p,   
+.account-links p {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #424242;
+}
