@@ -3,10 +3,6 @@
 
 import "./Navbar.css";
 
-// Now as here we are using 'React-Router' to navigate between different pages of our application, we will use the 'Link' component from the 'react-router-dom' package to create links in our Navbar. The 'Link' component allows us to navigate to different routes defined in our application without causing a full page reload, providing a smooth user experience. We will import the 'Link' component and use it to create navigation links in our Navbar.
-import { Link } from 'react-router-dom';
-// So instead of using <a> tag to create links in our Navbar, we will use the <Link> component from 'react-router-dom' package. The 'to' attribute of the <Link> component will be used to specify the target route for navigation. When a user clicks on a link, React Router will handle the navigation and render the corresponding component without refreshing the entire page.
-
 
 export default function Navbar() {
     return ( 
@@ -14,33 +10,33 @@ export default function Navbar() {
             {/* Here we are creating the Navbar component using Bootstrap actually */}
             <nav className="navbar navbar-expand-lg border-bottom"  style={{backgroundColor:'#fff'}}  >
                 <div className="container p-2">
-                    <Link className="navbar-brand" to="/">
-                        <img src="media/images/logo.svg"  style={{ width:'150px', height:'auto' }}  alt="Logo"/>
-                    </Link>
-                    <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <a className="navbar-brand ms-auto" href="#">
+                        <img src="media/images/logo.svg"  style={{ width:'25%', height:'auto' }}  alt="Logo"/>
+                    </a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mb-2 mb-lg-0 ms-auto">
                             <li className="nav-item">
-                                <Link className="nav-link" aria-current="page" to="/signup">Signup</Link>
+                                <a className="nav-link" aria-current="page" href="#">Signup</a>
                             </li>
                             
                             <li className="nav-item">
-                                <Link className="nav-link" to="/about">About</Link>
+                                <a className="nav-link" href="#">About</a>
                             </li>
 
                             <li className="nav-item">
-                                <Link className="nav-link" to="/products">Products</Link>
+                                <a className="nav-link" href="#">Products</a>
                             </li>
 
                             <li className="nav-item">
-                                <Link className="nav-link" to="/pricing">Pricing</Link>
+                                <a className="nav-link" href="#">Pricing</a>
                             </li>
 
                             <li className="nav-item">
-                                <Link className="nav-link" to="/support">Support</Link>
+                                <a className="nav-link" href="#">Support</a>
                             </li>
                         </ul>
                     </div>
@@ -49,3 +45,5 @@ export default function Navbar() {
         </div>
     );
 }
+
+
