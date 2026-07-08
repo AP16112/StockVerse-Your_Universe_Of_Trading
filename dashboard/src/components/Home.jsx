@@ -2,11 +2,15 @@
 
 
 
+import TopBar from "./TopBar.jsx";
+import Dashboard from "./Dashboard.jsx";
+
 
 export default function Home() {
   return (
     <>
-        <h1>Home</h1>
+      <TopBar/>
+      <Dashboard/>
     </>
   );
 }

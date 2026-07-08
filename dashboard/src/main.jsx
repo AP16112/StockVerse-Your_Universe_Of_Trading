@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-// import './index.css'
+import './index.css'
 import App from './App.jsx'
 
 // Here we are importing the 'BrowserRouter' component from the 'react-router-dom' package. The 'BrowserRouter' component is a higher-order component that provides the routing functionality for our React application. It uses the HTML5 history API to keep the UI in sync with the URL, allowing us to navigate between different routes without triggering a full page reload. By wrapping our entire application with the 'BrowserRouter', we enable the use of React Router's features, such as defining routes and rendering specific components based on the URL path.
