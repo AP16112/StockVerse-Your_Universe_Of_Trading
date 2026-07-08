@@ -38,3 +38,5 @@ createRoot(document.getElementById('root')).render(
 // npm install react-router-dom
 
 // After installing React Router, we can import the necessary components from the 'react-router-dom' package and define our routes in the application. We can use the <BrowserRouter> component to wrap our entire application and the <Route> component to define individual routes for different components. We can also use the <Link> component to create navigation links that allow users to navigate between different routes without triggering a full page reload.
+
+
