@@ -278,7 +278,10 @@ code {
 
 .menus li {
   display: inline-block;
+  align-items: center;
+  justify-content: space-evenly;
   margin-right: 30px;
+  margin-top: 30px;
   text-decoration: none;
 }
 
@@ -323,7 +326,10 @@ hr {
 
 .profile .username {
   font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
   font-weight: 300;
+  text-align: center;
 }
 
 /* sudo selectors */

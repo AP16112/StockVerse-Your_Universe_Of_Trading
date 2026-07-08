@@ -26,12 +26,13 @@ function App() {
   return (
     <Routes>
       {/* Here we define the route for the home page, so '/*' means that it will match any URL & then render the Home component for that any URL */}
+      {/* Here this '*' means any URL e.g /home, /about, /contact */}
       <Route path="/*" element={<Home/>} />
     </Routes>
   )
 }
 
-export default App
+export default App;
 
 
 
@@ -59,3 +60,55 @@ export default App
 // React Props :-
 // Props are the imformation that you pass to a JSX tag in the form of attributes(like HTML attributes) just like we pass the arguments in fn in JS.
 // SO the information that we pass during component call or component rendering are actually the React Props
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// State in React :-
+// The State is a built-in React object that is used to contain data or information about the component.
+// A component's state can change over time; whenever it changes, the component re-renders.
+
+// SO when we want to re-renders the components, we make use of state.
+
+// so for normal variables or props (which are immutable) if they changes, they don't re-renders the component, so those changes won't be visible in UI
+// Normal variables: If you declare something like let count = 0, React will render it once. Updating that variable later doesn’t trigger a re-render, so the UI won’t reflect the change. React has no way of knowing that the variable changed.
+// Props: Props are immutable by design. A component re-renders only if its parent re-renders and passes new props down. You can’t directly “mutate” props inside a child component to cause a re-render.
+
+// So component only re-renders if changes occurs in state which is a object 
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Hooks :-
+// Hooks were a new addition in React 16.8.
+// They let you use state and other React features without writing a class.
+// There are currently 15 hooks in react.
+// e.g useState() is one of the hook.
+
+// So hook is a function that helps to deal with states.
+
+// React Hooks are special functions that let you use React features (like state, lifecycle methods, and context) inside functional components, without needing class components. They make components more powerful, reusable, and easier to manage.
+
+// What Hooks Do :-
+// Enable state in functional components (useState, useReducer).
+// Handle side effects like data fetching or subscriptions (useEffect).
+// Access context values without prop drilling (useContext).
+// Work with DOM elements or mutable values (useRef).
+// Optimize performance (useMemo, useCallback).
+// Provide advanced features like transitions (useTransition) or custom hooks.
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// useState() :-
+// useState is a React Hook that lets you add a state variable to your component.
+// state variable means those variable in which when any changes occurs, then component needs to re-renders.
+// e.g const [state, setState] = useState(initialState);
+
+// So to use useState, we need to pass a initila value.
+// e.g here if we want counter to be state variable, then initialState will be its initial value i.e 0
+
+// useState returns an array with exactly two values :-
+// 1. The current state. During the first render, it will match the initialState you have passed.
+// 2. The set function that lets you update the state to a different value and trigger a re-render.
+
+// This setState method is also called as updater function as it updates the state variable.
+
+// initialState: The value you want the state to be initially. It can be a value of any type, but there is a special behavior for functions. This argument is ignored after the initial render.
+
+// We can only create the state variable inside some component & not outside it.
+// If we want we can also create multiple state variables inside the same component also.
