@@ -124,6 +124,45 @@ const { OrdersModel } = require("./model/ordersModel");
 
 
 
+// Now we will create the route for accessing all holdings data from the database
+// Here we are using the .get() method of the app object to define a route for the GET request to the /allHoldings endpoint. When a GET request is made to this endpoint, the callback function will be executed, which will retrieve all holdings data from the database using the HoldingsModel and send it back as a JSON response to the client. This allows us to access all holdings data from our MongoDB database through this API endpoint.
+// Here this callback fn is async because we are accessing the database to get the data, so it is necessary to make this callback fn as async because it will take some time to get the response from the database. So we will use async/await to handle this asynchronous process.
+app.get("/allHoldings", async (req, res) => {
+    // To find all documents i.e holdings here in the 'holdings' collection, we can use an empty query object like this :-
+    // Now here if we want we can use .then() & .catch() method to handle the promise returned by this .find() method of mongoose, but here we will use async-await way to handle this promise because it is more cleaner way to handle the asynchronous processes than using .then() & .catch() method, so we will use async-await way to handle this promise here.
+    // So as we know that this .find() method of mongoose is asynchronous, so it will return a promise, so we will handle this promise using async-await way here.
+    // So here we will use this way to handle this promise using async-await way :-
+    // Here although we are using 'HoldingsModel' but it will actually access the 'holdings' collection in our MongoDB database because we have defined the 'HoldingsModel' using the 'holdingsSchema' which is associated with the 'holdings' collection in our MongoDB database. So when we use the 'HoldingsModel' to perform any operation, it will actually perform that operation on the 'holdings' collection in our MongoDB database.
+    // And {} is an empty query object which means that we want to find all documents in the 'holdings' collection. So it will return all documents in the 'holdings' collection.
+    let allHoldings = await HoldingsModel.find({});
+    
+    // returing the allHoldings data as a JSON response to the client
+    res.json(allHoldings);
+});
+
+
+
+
+// Now we will create the route for accessing all positions data from the database
+app.get("/allPositions", async (req, res) => {
+    // To find all documents i.e positions here in the 'positions' collection, we can use an empty query object like this :-
+    // Now here if we want we can use .then() & .catch() method to handle the promise returned by this .find() method of mongoose, but here we will use async-await way to handle this promise because it is more cleaner way to handle the asynchronous processes than using .then() & .catch() method, so we will use async-await way to handle this promise here.
+    // So as we know that this .find() method of mongoose is asynchronous, so it will return a promise, so we will handle this promise using async-await way here.
+    // So here we will use this way to handle this promise using async-await way :-
+    // Here although we are using 'PositionsModel' but it will actually access the 'positions' collection in our MongoDB database because we have defined the 'PositionsModel' using the 'positionsSchema' which is associated with the 'positions' collection in our MongoDB database. So when we use the 'PositionsModel' to perform any operation, it will actually perform that operation on the 'positions' collection in our MongoDB database.
+    // And {} is an empty query object which means that we want to find all documents in the 'positions' collection. So it will return all documents in the 'positions' collection.
+    let allPositions = await PositionsModel.find({});
+    
+    // returing the allPositions data as a JSON response to the client
+    // res is the response object provided by Express in a route handler.
+    // json() is a method on res that sends a JSON‑formatted response back to the client (browser, Postman, curl, etc.).
+    res.json(allPositions);
+});
+
+
+
+
+
 
 
 
