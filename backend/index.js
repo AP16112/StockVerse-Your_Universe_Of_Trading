@@ -45,6 +45,21 @@
 // SO we are using this -D here because we will use nodemon only during development phase to run our backend server. In production phase, we will use the command :- node index.js to run our backend server.
 
 
+
+
+// Once environmental variables gets saved in .env file, then we can use them anywhere in our project.
+// But we can't use these environment variables directly in our code, we need to load them into our application using the dotenv package. To do that, we need to require the dotenv package and call the config() method at the very beginning of our application (usually in the index.js file) before any other code that uses environment variables. This will load the environment variables from the .env file into process.env, allowing us to access them throughout our application using process.env.KEY_NAME.
+
+
+// This 'process' is actually used to track all the processes running in our operating system. It is a global object that provides information about the current Node.js process and allows us to interact with it. It provides various properties and methods that we can use to access information about the process, such as its ID, version, platform, memory usage, environment variables, and more. It also allows us to handle events related to the process, such as exit events, uncaught exceptions, and signals. We can use the process object to control the behavior of our Node.js application and manage its lifecycle.
+// here we are using this condition to check that if our application is not running in production environment, then we will load the environment variables from the .env file using dotenv package. This is a common practice to ensure that we only load the .env file during development and testing, and not in production where environment variables are typically set through other means (like hosting platform settings or CI/CD pipelines). By doing this, we can keep our production environment secure and avoid accidentally exposing sensitive information from the .env file.
+if(process.env.NODE_ENV !== "production"){  
+    require('dotenv').config() // or import 'dotenv/config' if you're using ES6
+}
+// So all the environment variables that we have defined in our .env file will be available in our application through process.env object, and we can access them using process.env.KEY_NAME where KEY_NAME is the name of the environment variable that we want to access. For example, if we have an environment variable called SECRET in our .env file, we can access its value in our application using process.env.SECRET. This allows us to keep sensitive information like API keys, database credentials, and other configuration details out of our source code and easily manage them through environment variables.
+
+
+
 //This express is actually a function here
 const express = require("express");
 //And we store the value return by this express() fn in a variable called app
@@ -56,8 +71,48 @@ const app = express();
 // It provides a set of methods and properties that allow us to build a web server and handle HTTP requests and responses in a structured way. We can use this 'app' object to define the behavior of our application and create a server that listens for incoming requests on a specified port.
 
 
-const port = 8080;
+const mongoose = require("mongoose");
+// mongoose is a library that creates a connection between MongoDB & Node.js JavaScript Runtime Environment.
 
+
+// Here we are defining the port number on which our backend server will run. We are using the environment variable PORT if it is defined, otherwise we are using the default port number 8080. This allows us to easily change the port number in different environments (e.g., development, production) without having to modify the code. It also allows us to avoid conflicts with other applications that may be using the same port number.
+const port = process.env.PORT || 8080;
+
+
+
+// Here this process.env.ATLASDB_URL is the URL of our Atlas MongoDB database, which is running on cloud i.e on MongoDB Atlas.
+const dbUrl = process.env.ATLASDB_URL;
+// Here this dbUrl is the URL of our MongoDB database, which is running on cloud i.e on MongoDB Atlas. We are storing this URL in an environment variable called ATLAS_URL in our .env file for security reasons, so that we can easily manage it and keep it secure. We can access this environment variable in our application using process.env.ATLAS_URL.
+// So here we will use this dbUrl to connect to our MongoDB database using mongoose.connect() method.
+
+
+
+// Here this .connect() fn of mongoose is used to connect to mongoDB server
+
+// Here As soon as we run this 'mongoose.connect(dbUrl);' command, it will actually awaits for a promise from the database itself.
+// Here this .connect() method is a asynchronous method, so it will start a asynchronous process
+// So most of the proccess that we will perform using mongoose will actually be asynchronous processes because sometimes it takes time to gets the response from the database, so it is necessary for these processes to be asynchronous
+// SO we will handle all these functions asynchronously only.
+// SO that's why we will use this way :-
+// As we know that An async function always returns a Promise, here also it will return a promise
+// What is happening here? :-
+// mongoose.connect() is asynchronous. So, it returns a Promise
+// await:
+// pauses execution inside main()
+// waits until MongoDB connection is done
+// If connection succeeds → move on & print 'connected to DB successfully'
+// If connection fails → throw an error
+
+main().then(() => {
+    console.log("connected to DB successfully");
+})
+.catch((error) => {
+    console.log(error);
+});
+
+async function main() {
+    await mongoose.connect(dbUrl);
+}
 
 
 
