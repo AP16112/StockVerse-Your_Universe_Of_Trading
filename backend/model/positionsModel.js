@@ -3,7 +3,7 @@
 // Here we need the schema that we defined in the PositionsSchema.js file, so we will import it here. This will allow us to create a Mongoose model based on the positionsSchema, which we can then use to interact with the positions data in our database.
 const mongoose = require('mongoose');
 
-const { ordersSchema } = require('../schemas/.js');
+const { positionsSchema } = require('../schemas/positionsSchema.js');
 
 // We generally take the name of model same as the name of the collection
 const PositionsModel = mongoose.model("Position", positionsSchema);

@@ -116,6 +116,13 @@ async function main() {
 
 
 
+// Here we will import the models for Holdings, Positions, and Orders from their respective files in the model folder. These models will allow us to interact with the corresponding collections in our MongoDB database, including creating, reading, updating, and deleting records.
+const { HoldingsModel } = require("./model/holdingsModel");
+const { PositionsModel } = require("./model/positionsModel");
+const { OrdersModel } = require("./model/ordersModel");
+
+
+
 
 
 
