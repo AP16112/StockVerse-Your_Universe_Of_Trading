@@ -74,6 +74,10 @@ const app = express();
 const mongoose = require("mongoose");
 // mongoose is a library that creates a connection between MongoDB & Node.js JavaScript Runtime Environment.
 
+// Here we are using the body-parser middleware to parse the incoming request bodies in a middleware before your handlers, available under the req.body property. It will help us to extract the data from the request body and make it available in the req.body object. It will help us to handle the incoming data from the client side and process it on the server side.
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
 
 // Here we are defining the port number on which our backend server will run. We are using the environment variable PORT if it is defined, otherwise we are using the default port number 8080. This allows us to easily change the port number in different environments (e.g., development, production) without having to modify the code. It also allows us to avoid conflicts with other applications that may be using the same port number.
 const port = process.env.PORT || 8080;
@@ -120,6 +124,26 @@ async function main() {
 const { HoldingsModel } = require("./model/holdingsModel");
 const { PositionsModel } = require("./model/positionsModel");
 const { OrdersModel } = require("./model/ordersModel");
+
+
+
+// SO now we will use the app.use() method to add middleware to our Express application. Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. They can execute any code, make changes to the request and response objects, end the request-response cycle, and call the next middleware function in the stack. In this case, we are using two middleware functions: cors() and bodyParser.json(). The cors() middleware enables Cross-Origin Resource Sharing (CORS) for all routes, allowing our frontend application to make requests to our backend server from a different domain or port. The bodyParser.json() middleware parses incoming request bodies in JSON format and makes them available under the req.body property, allowing us to easily access and process data sent from the client side.
+app.use(cors()); // Enable CORS for all routes
+// CORS (Cross-Origin Resource Sharing) is a security feature built into browsers. By default, browsers block requests from one origin (say, http://localhost:3000) to another (http://localhost:8080).
+// cors() is a middleware that tells Express: “It’s okay to accept requests from other origins.”
+// With app.use(cors());, you’re enabling CORS for all routes in your server.
+// This is essential when your frontend (React, Angular, etc.) runs on a different port/domain than your backend API.
+
+
+//SO this is a standard line which we use always whenever we use the POST request
+//Here app.use() means that this work must happens for all requests
+//SO it means if for any post request, url encoded data or json data comes, then bodyparser will parse it to understand it
+app.use(bodyParser.json());
+// Here we are using the body-parser middleware to parse the incoming request bodies in a middleware before your handlers, available under the req.body property. It will help us to extract the data from the request body and make it available in the req.body object. It will help us to handle the incoming data from the client side and process it on the server side.
+// body-parser is middleware that parses the body of incoming requests.
+// bodyParser.json() specifically parses requests with Content-Type: application/json.
+// It converts the raw JSON payload into a JavaScript object and attaches it to req.body.
+// Without this, req.body would be undefined when you try to read JSON data from a POST request.
 
 
 
