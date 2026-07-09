@@ -161,3 +161,58 @@ export default App;
 // SO it will install the Material UI icons & also the Material UI & its dependencies. So we can use the Material UI icons directly without even installing Material UI.
 
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// useEffect() :-
+// It is also an Hook in React.
+// The Effect Hook lets you perform side effects in function components
+
+// When our component is rendered first time, or whenever our component is rebdered  and we want to perform some task, then we can make use of useEffect hook.
+// e.g when our state variable is changing , then it means that our component gets re-renders & if before rendering we want to perform some task, then we can do that using this useEffect() hook
+
+// Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects.
+
+// Side effects are things that happen outside the normal rendering flow, such as:-
+// Fetching data from an API
+// Subscribing/unsubscribing to events
+// Updating the DOM manually
+// Setting timers
+
+// So we can pass some function inside useEffect like :-
+// useEffect( function )
+// Now whenever any changes happens in state, then this functions gets executed actually.
+// SO this function is actually a side-effect here
+// e.g useEffect(function printSomething() {
+//     console.log("This is a side-effect");
+// });
+
+// Now we can also pass the dependencies inside this useEffect along with setup( i.e some function):-
+// useEffect(setup, dependencies);
+// These dependencies are nothing but our state variables.
+
+// setup (the first argument) :-
+// This is the function where you put your side effect logic.
+// Example: fetching data, setting up a timer, subscribing to an event.
+// It can also return a cleanup function to undo the effect when the component unmounts or before the effect re-runs.
+
+// dependencies (the second argument) :-
+// This is an array of values that React watches.
+// The effect runs again whenever any of these values change.
+// It controls when the effect executes.
+
+// Examples: Empty array [] → run only once after initial render.
+// No array → run after every render.
+// Specific values [count] → run after initial render and whenever count changes.
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Real Life Use Cases of useEffect() :-
+// e.g during 1st time rendering, before rendering our app is fetching some data from database which will take some time
+// And during that time, we want that some loader must appear on screen, so we can use this useEffect to show loader using some function before our 1st time rendering.
+
+// Similarly, we have soo many real life use cases of this useEffect which are given in React documentation.
+
+// One of the use case is :-
+// API Calls - Asynchronous Operations :-
+// Asynchronous Operations like fetching data from DB or from mapbox or we are using google APIs etc.
+
+// So here we will create this Joker component which will print some joke & in that we will use API calls & look for how useEffect will be used in that.
