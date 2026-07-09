@@ -15,6 +15,10 @@
 // So we will import the bootstrap css file using cdn link in index.html file of our react app.
 
 
+// Here we will also make use of the Material UI & its components for styling our react app & its components.
+// We make use of Material UI icons for the icons in our react app & its components.
+
+
 // Here we are importing the 'Route' and 'Routes' components from the 'react-router-dom' package. The 'Routes' component is used to define a set of routes in our application, and the 'Route' component is used to define individual routes that map specific URLs to corresponding components. By using these components, we can create a routing structure for our React application, allowing users to navigate between different pages or views based on the URL path.
 import {Route, Routes} from 'react-router-dom';
 
@@ -112,3 +116,48 @@ export default App;
 
 // We can only create the state variable inside some component & not outside it.
 // If we want we can also create multiple state variables inside the same component also.
+
+//-------------------------------------------------------------------------------------------------------------------
+// Material UI :-
+// It is a library of React UI components just like bootstrap for CSS.
+// SO this material Ui is similar to bootstrap actually
+// It give pre-built proper React Ui components to us.
+
+// Material UI is an open-source React component library that implements Google's Material Design.
+// It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box and features a suite of customization options that make it easy to implement your own custom design system on top of our components.
+
+// We can use this as cdn also or we can install it also.
+// We will actually use the installation method.
+
+// So to install it, we can use this :- 
+// npm install @mui/material @emotion/react @emotion/styled
+
+// In Material UI, we have two types of styling engines :-
+// - Emotion   (it is strongly preferred)
+// - styled-components 
+
+// Material UI uses Emotion as its default styling engine. 
+// If you want to use styled-components instead, run one of the following commands:
+// npm install @mui/material @mui/styled-engine-sc styled-components
+
+// Material UI uses the Roboto font by default. 
+// Add it to your project via Fontsource, or with the Google Fonts CDN.
+// npm install @fontsource/roboto   ---> here we will use this way
+// Then you can import it in your entry point (i.e in the files in which we want to use them) like this:
+// import '@fontsource/roboto/300.css';
+// import '@fontsource/roboto/400.css';
+// import '@fontsource/roboto/500.css';
+// import '@fontsource/roboto/700.css';
+
+// Or we can use Cdn link 
+
+
+// To use the font Icon component or the prebuilt SVG Material Icons (such as those found in the icon demos), you must first install the Material Icons font. You can do so with npm, or with the Google Web Fonts CDN.
+// npm install @mui/icons-material
+
+// Now to use the Material UI icons directly without even installing Material UI, we can  use it using this npm link :-
+// npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+
+// SO it will install the Material UI icons & also the Material UI & its dependencies. So we can use the Material UI icons directly without even installing Material UI.
+
+

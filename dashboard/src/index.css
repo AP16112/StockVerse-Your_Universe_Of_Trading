@@ -190,7 +190,7 @@ code {
 }
 
 .order-table tr td:last-child {
-  font-size: 0.6rem;
+  font-size: 0.85rem;
 }
 
 .order-table td {
@@ -394,7 +394,6 @@ hr {
 
 .order-table table {
   width: 100%;
-  border-collapse: collapse;
 }
 
 .order-table tr {
@@ -424,7 +423,7 @@ hr {
 }
 
 .order-table tr td:last-child {
-  font-size: 0.6rem;
+  font-size: 0.85rem;
 }
 
 .order-table td {
