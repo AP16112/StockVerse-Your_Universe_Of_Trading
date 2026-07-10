@@ -218,6 +218,20 @@ app.post("/newOrder", async (req, res) => {
 
 
 
+// Return all orders (used by dashboard orders view)
+app.get("/orders", async (req, res) => {
+    try {
+        const allOrders = await OrdersModel.find({});
+        
+        res.json(allOrders);
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to fetch orders' });
+    }
+});
+
+
+
+
 
 
 //this .listen() fn have two parameters & the 1st parameter is 'port' & end parameter is some callback fn

@@ -201,14 +201,6 @@ const WatchListActions = ({ uid }) => {
                     <button className="sell">Sell</button>
                 </Tooltip>
 
-                <Tooltip  title="Analytics (A)"   placement="top"    arrow    TransitionComponent={Grow}>
-                    <button className="action">
-                        {/* Here we are using the BarChartOutlined icon from Material UI, it will creates an Analytics button with a bar chart icon  */}
-                        {/* <BarChartOutlined className="icon" /> → A Material UI icon component (a bar chart outline) placed inside the button. This visually represents “Analytics.” */}
-                        <BarChartOutlined className="icon" />
-                    </button>
-                </Tooltip>
-
                 <Tooltip title="More" placement="top"   arrow    TransitionComponent={Grow}>
                         <button className="action">
                             {/* Here we are using the MoreHoriz icon from Material UI, it will creates a "More" button with a horizontal ellipsis icon */}
