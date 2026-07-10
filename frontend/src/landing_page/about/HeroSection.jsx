@@ -5,31 +5,28 @@ export default function HeroSection() {
     return ( 
         <div className="container">
             <div className="row p-5 mt-5 mb-5">
-                <h1 className="fs-2 text-center">We pioneered the discount broking model in India.<br></br>Now, we are breaking ground with our technology.</h1>
+                <h1 className="fs-2 text-center">StockVerse - a learning demo for trading stocks & flows</h1>
             </div>
 
-            <div className="row p-5 mt-5 text-muted border-top"  style={{lineHeight:"1.8rem", fontSize:"1.2rem"}}>
+            <div className="row p-5 mt-5 text-muted border-top"  style={{lineHeight:"1.8rem", fontSize:"1.1rem"}}>
                 <div className="col-6 p-5">
                     <p>
-                        We kick-started operations on the 15th of August, 2010 with the goal of breaking all barriers that traders and investors face in India in terms of cost, support, and technology. We named the company Zerodha, a combination of Zero and "Rodha", the Sanskrit word for barrier.
+                        StockVerse is a student-built learning webapp inspired by real trading platforms (for example, Zerodha). It demonstrates user interfaces, simulated data flows, and common trading workflows for education and prototyping.
                     </p>
                     <p>
-                        Today, our disruptive pricing models and in-house technology have made us the biggest stock broker in India.
+                        This project is not a live brokerage and is not affiliated with any financial institution. Do not use StockVerse with real funds — it is intended for experimentation and learning only.
                     </p>
                     <p>
-                        Over 1+ Crore clients place millions of orders every day through our powerful ecosystem of investment platforms, contributing over 15% of all Indian retail trading volumes.
+                        The codebase is useful for students, designers, and developers who want to study how trading apps are built.
                     </p>
                 </div>
 
                 <div className="col-6 p-5">
                     <p>
-                        In addition, we run a number of popular open online educational and community initiatives to empower retail traders and investors.
+                        The site includes sample datasets, demo flows, and educational notes to help you explore product design and technical patterns used by trading platforms.
                     </p>
                     <p>
-                        <a href="" style={{ textDecoration: "none", color:'#387ed1' }}>Rainmatter</a>, our fintech fund and incubator, has invested in several fintech startups with the goal of growing the Indian capital markets.
-                    </p>
-                    <p>
-                        And yet, we are always up to something new every day. Catch up on the latest updates on our blog or see what the media is saying about us.
+                        For full details, see the <a href="" style={{ textDecoration: "none", color:'#387ed1' }}>project codes</a>.
                     </p>
                 </div>
             </div>

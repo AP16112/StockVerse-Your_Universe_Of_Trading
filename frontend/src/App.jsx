@@ -17,9 +17,8 @@ import HomePage from "./landing_page/home/HomePage.jsx";
 
 // Here we are importing the 'Route' and 'Routes' components from the 'react-router-dom' package. The 'Routes' component is used to define a set of routes in our application, and the 'Route' component is used to define individual routes that map specific URLs to corresponding components. By using these components, we can create a routing structure for our React application, allowing users to navigate between different pages or views based on the URL path.
 import {Route, Routes} from 'react-router-dom';
-import Signup from "./landing_page/signup/Signup.jsx";
 import AboutPage from "./landing_page/about/AboutPage.jsx";
-import ProductsPage from "./landing_page/products/ProductsPage.jsx";
+import FeaturesPage from "./landing_page/features/FeaturesPage.jsx";
 import PricingPage from "./landing_page/pricing/PricingPage.jsx";
 import SupportPage from "./landing_page/support/SupportPage.jsx";
 import NotFound from "./landing_page/NotFound.jsx";
@@ -31,9 +30,8 @@ function App() {
     <Routes>
       {/* Here we define the route for the home page, so it means that when the user navigates to the root URL, the HomePage component will be rendered */}
       <Route path="/" element={<HomePage />} />
-      <Route path="/signup" element={<Signup />} />
       <Route path="/about" element={<AboutPage />} />
-      <Route path="/products" element={<ProductsPage />} />     
+      <Route path="/features" element={<FeaturesPage />} />     
       <Route path="/pricing" element={<PricingPage />} /> 
       <Route path="/support" element={<SupportPage />} /> 
 

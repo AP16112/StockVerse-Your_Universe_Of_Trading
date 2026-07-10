@@ -2,16 +2,85 @@
 #supportHeroSection {
     background-color: #387ed1;
     color: white;
+    padding: 4rem 0;
 }
 
 #supportHeroSection a {
     color: white;
 }
 
-#supportWrapper {
+.support-hero-inner {
     display: flex;
-    justify-content: space-between;
-    margin: 0 150px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.support-hero-content {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.support-hero-text {
+    line-height: 1.8;
+    font-size: 1rem;
+    max-width: 720px;
+    margin: 1.25rem auto 1.75rem;
+}
+
+.support-search {
+    display: flex;
+    justify-content: center;
+}
+
+.support-search-input {
+    width: 100%;
+    max-width: 580px;
+    padding: 0.9rem 1rem;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.support-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1rem;
+}
+
+.support-link {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background: rgba(255,255,255,0.12);
+    padding: 0.75rem 1rem;
+    border-radius: 40px;
+    transition: background 0.25s ease;
+}
+
+.support-link:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.support-contact {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    padding: 1rem 1.25rem;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.18);
+    display: inline-block;
+    max-width: 680px;
+    width: fit-content;
+    text-align: center;
+}
+
+.support-contact strong {
+    color: yellow;
+    font-weight: 700;
 }
 
 

@@ -10,29 +10,28 @@ export default function HeroSection() {
         // SO here either we can use container-fluid class of bootstrap or we can use section tag and give it a class of 'container-fluid' which will make this section full width of the screen.
         // So we will use section tag and give it a class of 'container-fluid' which will make this section full width of the screen.
         <section className="container-fluid" id="supportHeroSection">
-            <div className="p-5" id="supportWrapper">
-                <h4>Support Portal</h4>
-                <a href="">Track Tickets</a>
-            </div>
+            <div className="support-hero-inner">
+                <div className="support-hero-content text-center">
+                    <h1>StockVerse Support</h1>
+                    <h1 className="fs-3">Need help with the demo dashboard or simulated trading workflow?</h1>
+                    <p className="support-hero-text">
+                        StockVerse is designed as a demo learning platform, so support team can help you understand the app, practice simulated trades, and navigate landing page features. If you run into any issue while exploring the dashboard, watchlist, or order flows, we are here to help.
+                    </p>
 
-            <div className="row p-5 m-3">
-                <div className="col-6 p-3">
-                    <h1 className="fs-3">Search for an answer or browse help topics to create a ticket</h1>
-                    
-                    <input placeholder="Eg. how do I activate F&O" />
-                    <br></br>
-                    <a href="">Track account opening</a>
-                    <a href="">Track segment activation</a>
-                    <a href="">Intraday margins</a>
-                    <a href="">Kite user manual</a>
-                </div>
+                    <div className="support-search mb-4">
+                        <input className="support-search-input" placeholder="Eg. how do I place a buy order" />
+                    </div>
 
-                <div className="col-6 p-3">
-                    <h1 className="fs-3">Featured</h1>
-                    <ol>
-                        <li><a href="">Current Takeovers and Delisting - January 2024</a></li>
-                        <li><a href="">Latest Intraday leverages - MIS & CO</a></li>
-                    </ol>
+                    <div className="support-links mb-4">
+                        <a className="support-link" href="">How to use WatchList</a>
+                        <a className="support-link" href="">Understand Holdings</a>
+                        <a className="support-link" href="">Simulated order flow</a>
+                        <a className="support-link" href="">Dashboard summary guide</a>
+                    </div>
+
+                    <div className="support-contact">
+                        For all these issues, try contacting <strong>arpitpal16112@gmail.com</strong> or call <strong>94XXXXXXX</strong>.
+                    </div>
                 </div>
             </div>
         </section>

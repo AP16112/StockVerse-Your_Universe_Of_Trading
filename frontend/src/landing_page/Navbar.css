@@ -7,3 +7,75 @@
 .nav-link {
     margin-left: 2rem;
 }
+
+/* center navbar links */
+/* Keep Bootstrap's default stacked/collapse behavior on small screens.
+   Apply flex layout and right-alignment only on large screens. */
+.navbar-collapse {
+  flex: 1 1 auto;
+}
+
+.navbar-nav {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (min-width: 992px) {
+  .navbar > .container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navbar-collapse {
+    display: flex !important;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+  }
+
+  .navbar-nav {
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+    margin-left: auto; /* push nav items to the right on desktop */
+  }
+
+  .navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Try StockVerse CTA */
+.try-cta .try-link {
+  display: inline-block;
+  color: #ffffff;
+  background: #000000;
+  padding: 10px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.12);
+  transition: opacity 120ms ease, filter 120ms ease;
+}
+
+.try-cta .try-link:hover {
+  filter: brightness(0.95);
+  opacity: 0.8;
+}
+
+.try-cta .try-link::after {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.navbar-cta {
+  margin-left: 1rem;
+}

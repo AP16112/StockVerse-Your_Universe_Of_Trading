@@ -2,9 +2,6 @@
 // Inside this component, we will be importing and utilizing other components such as 'HeroSection', 'Stats', 'Pricing', and 'Education' to create a comprehensive landing page experience for our users.
 
 
-// import Education from "./Education";
-// ----------OR------------
-import Education from "./Education.jsx";
 import HeroSection from "./HeroSection.jsx";
 import Pricing from "./Pricing.jsx";
 import Stats from "./Stats.jsx";
@@ -17,7 +14,6 @@ export default function HomePage() {
             <HeroSection/>
             <Stats/>
             <Pricing/>
-            <Education/>
             <OpenAccount/>
         </>
     );

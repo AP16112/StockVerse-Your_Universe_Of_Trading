@@ -6,26 +6,26 @@ export default function HeroSection() {
         <div className="container">
             <div className="row p-5 mt-5 border-bottom text-center">
                 <h1>Pricing</h1>
-                <h3 className="text-muted mt-3 fs-5">Free equity investments and flat ₹20 traday and F&O trades</h3>
+                <h3 className="text-muted mt-3 fs-5">StockVerse is a simulated trading playground built for learning - no live money, no real brokerage, only practice.</h3>
             </div>
 
             <div className="row p-5 mt-5 text-center">
                 <div className="col-4 p-4">
                     <img src="media/images/pricingEquity.svg" />
-                    <h1 className="fs-3">Free equity delivery</h1>
-                    <p className="text-muted">All equity delivery investments (NSE, BSE), are absolutely free - ₹0 brokerage.</p>
-                </div>
-
-                <div className="col-4 p-4">
-                    <img src="media/images/intradayTrades.svg" />
-                    <h1 className="fs-3">Intraday and F&O trades</h1>
-                    <p className="text-muted">Flat Rs. 20 or 0.03% (whichever is lower) per executed order on intraday trades across equity, currency, and commodity trades.</p>
+                    <h1 className="fs-3">Paper trading experience</h1>
+                    <p className="text-muted">Practice equity, intraday, and F&O-style trades with sample data to build confidence before you trade for real.</p>
                 </div>
 
                 <div className="col-4 p-4">
                     <img src="media/images/pricingEquity.svg" />
-                    <h1 className="fs-3">Free direct MF</h1>
-                    <p className="text-muted">All direct mutual fund investments are absolutely free - ₹0 commissions & DP charges.</p>
+                    <h1 className="fs-3">Zero real charges</h1>
+                    <p className="text-muted">This demo app does not execute real orders, so there are no brokerage fees, DP charges, or market risk on your account.</p>
+                </div>
+
+                <div className="col-4 p-4">
+                    <img src="media/images/pricingEquity.svg" />
+                    <h1 className="fs-3">Learning-first design</h1>
+                    <p className="text-muted">Use the dashboard to explore watchlists, holdings, positions, orders, and summary metrics in a teaching-friendly environment.</p>
                 </div>
             </div>
         </div>

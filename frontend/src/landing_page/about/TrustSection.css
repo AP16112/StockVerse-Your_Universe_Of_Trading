@@ -1,0 +1,39 @@
+.trust-section {
+  background: #fff;
+}
+
+.trust-title {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.trust-card {
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f8f9fb;
+  border: 1px solid #eef2f7;
+}
+
+.trust-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.trust-card p {
+  margin: 0;
+  color: #333;
+  line-height: 1.45;
+}
+
+@media (min-width: 768px) {
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

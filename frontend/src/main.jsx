@@ -15,7 +15,9 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       {/* As we need Navbar & Footer on all pages, so that's why we are importing them here so that they are visible on all pages */}
       <Navbar/>
-      <App />
+      <div className="site-content" style={{ flex: 1 }}>
+        <App />
+      </div>
       <Footer/>
     </BrowserRouter>
   </StrictMode>

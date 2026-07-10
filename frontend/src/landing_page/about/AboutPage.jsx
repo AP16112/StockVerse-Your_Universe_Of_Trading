@@ -2,6 +2,7 @@
 
 // import React from 'react';
 import HeroSection from "./HeroSection.jsx";
+import TrustSection from "./TrustSection.jsx";
 import Team from "./Team.jsx";
 
 
@@ -9,6 +10,7 @@ function AboutPage() {
     return ( 
         <>
             <HeroSection/>
+            <TrustSection/>
             <Team/>
         </>
     );

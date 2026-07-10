@@ -10,20 +10,20 @@ export default function Team() {
 
             <div className="row p-4 text-muted"  style={{lineHeight:"1.8rem", fontSize:"1.2rem"}}>
                 <div className="col-6 p-5 text-center">
-                    <img src="media/images/nithinKamath.jpg"  alt="developer image"  style={{borderRadius:"100%", width:"50%"}}></img>
+                    <img src="media/images/profile.jpg"  alt="developer image"  style={{borderRadius:"100%", width:"50%"}}></img>
                     <h4 className="mt-5">Arpit Pal</h4>
                     <h6>AI/ML & Full stack Developer</h6>
                 </div>
 
                 <div className="col-6 p-5">
                     <p>
-                        Nithin bootstrapped and founded Zerodha in 2010 to overcome the hurdles he faced during his decade long stint as a trader. Today, Zerodha has changed the landscape of the Indian broking industry.
+                        StockVerse is developed as a learning and demo webapp by me. My goal is to show how trading user experiences are designed, not to operate as a real brokerage.
                     </p>
                     <p>
-                        He is a member of the SEBI Secondary Market Advisory Committee (SMAC) and the Market Data Advisory Committee (MDAC).
+                        I combine web engineering, design, and market data concepts to build a practical platform for studying trading app workflows.
                     </p>
                     <p>
-                        Playing basketball is his zen.
+                        I also made it functional to simulate real life trading platforms.
                     </p>
                 </div>
             </div>

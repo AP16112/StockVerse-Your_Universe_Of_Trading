@@ -66,6 +66,11 @@ body {
   box-sizing: border-box;
 }
 
+.site-content {
+  flex: 1 1 auto;
+  display: block;
+}
+
 h1,
 h2 {
   font-family: var(--heading);

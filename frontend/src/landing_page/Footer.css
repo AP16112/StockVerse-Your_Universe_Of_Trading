@@ -22,4 +22,32 @@
     color: #424242;
 }
 
+/* Footer center layout for StockVerse */
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.fv-logo {
+    height: 56px;
+    width: auto;
+}
+
+.f-info-socials a {
+    color: #424242;
+    margin: 0 8px;
+    font-size: 28px;
+}
+
+.f-info-socials a:hover {
+    color: #387ed1;
+}
+
+.f-info-brand {
+    font-weight: 600;
+    color: #333;
+}
+
 

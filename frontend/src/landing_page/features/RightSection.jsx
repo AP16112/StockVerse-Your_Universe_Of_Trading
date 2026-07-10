@@ -1,4 +1,4 @@
-// Here we are creating this 'RightSection' component to be used in the products page of our application.
+// Here we are creating this 'RightSection' component to be used in the features section of our application.
 
 
 
@@ -8,13 +8,13 @@
 // One way to use the React Props in this child component is to use the destructuring assignment syntax to extract the values of the React Props from the props object that is passed to this child component. So we can use the destructuring assignment syntax to extract the values of the React Props from the props object that is passed to this child component and then we can use these values in this child component to display the information that we have passed from the parent component.
 // And another way to use the React Props in this child component is to use the props object that is passed to this child component and then we can use the dot notation to access the values of the React Props from the props object that is passed to this child component and then we can use these values in this child component to display the information that we have passed from the parent component.
 // Here we are using the destructuring assignment syntax to extract the values of the React Props from the props object that is passed to this child component and then we are using these values in this child component to display the information that we have passed from the parent component.
-export default function RightSection({imageURL, productName, productDescription, learnMore}) {
+export default function RightSection({imageURL, featureName, featureDescription, learnMore}) {
     return ( 
         <div className="container mt-5">
             <div className="row">
                 <div className="col-5 mt-5 p-5">
-                    <h1 className="mb-3 fs-2 mt-5">{productName}</h1>
-                    <p style={{lineHeight:"1.8rem"}}>{productDescription}</p>
+                    <h1 className="mb-3 fs-2 mt-5">{featureName}</h1>
+                    <p style={{lineHeight:"1.8rem"}}>{featureDescription}</p>
 
                     <div>
                         {/* Here this learnMore is actually some external URL*/}
@@ -25,9 +25,19 @@ export default function RightSection({imageURL, productName, productDescription,
                 {/* Here we are using this empty columun to create a width or space of 1 column between both these above and below columns */}
                 <div className="col-1"></div>
 
-                <div className="col-6 mt-3">
+                <div className="col-6 mt-3 d-flex justify-content-center align-items-center">
                     {/* Here no need to use "" for the src attribute because we are using the React Props & this imageUrl is a React Prop */}
-                    <img src={imageURL} style={{width:"99%"}}  alt="product image"></img>
+                    <img
+                        src={imageURL}
+                        alt="feature image"
+                        style={{
+                            width: "500px",
+                            height: "450px",
+                            maxWidth: "100%",
+                            borderRadius: "10%",
+                            border: "1px solid yellow",
+                        }}
+                    />
                 </div>
             </div>
         </div>
