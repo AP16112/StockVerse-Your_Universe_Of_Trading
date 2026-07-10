@@ -186,6 +186,35 @@ app.get("/allPositions", async (req, res) => {
 
 
 
+// Here we will need this app.use(bodyParser.json()) :-
+// Because When a client (like your React frontend) sends a POST request with JSON data.
+// By default, Express does not automatically parse the request body.That means req.body would be undefined if you try to access it in your route.
+// bodyParser.json() middleware that tells Express:
+// “Whenever a request comes in with Content-Type: application/json, parse the raw JSON string into a JavaScript object and attach it to req.body.”
+
+
+// Here we are creating this post route to handle the new order creation & then saving that into the database also.
+app.post("/newOrder", async (req, res) => {
+    // Create a new instance of the OrdersModel (a Mongoose model)
+    // We populate it with data coming from the request body.
+    // req.body contains the JSON payload sent by the client (thanks to express.json() middleware).
+    let newOrder = new OrdersModel({
+        name: req.body.name,   // Customer name or order name
+        qty: req.body.qty,     // Quantity of items ordered
+        price: req.body.price, // Price of the order/item
+        mode: req.body.mode,   // Mode of payment or delivery (e.g., "BUY", "SELL")
+    });
+
+    // Save the new order document into the MongoDB database.
+    // .save() is an asynchronous operation provided by Mongoose.
+    // It persists the document and returns a promise.
+    newOrder.save();
+
+    // Send a response back to the client confirming the order was saved.
+    // This is a simple text response.
+    res.send("Order saved!");
+});
+
 
 
 

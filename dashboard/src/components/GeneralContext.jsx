@@ -4,6 +4,7 @@
 import { useState } from "react";
 
 import BuyActionWindow from "./BuyActionWindow.jsx";
+import SellActionWindow from "./SellActionWindow.jsx";
 
 // createContext is a React function for global state sharing.
 import { createContext } from "react";
@@ -24,7 +25,9 @@ import { createContext } from "react";
 // They act as safe defaults.
 const GeneralContext =  createContext({
     openBuyWindow: (uid) => {},
+    openSellWindow: (uid) => {},
     closeBuyWindow: () => {},
+    closeSellWindow: () => {},
 });
 // GeneralContext is the Context object you’ll use with:-
 // - <GeneralContext.Provider> → to supply real implementations of openBuyWindow and closeBuyWindow.
@@ -34,6 +37,7 @@ const GeneralContext =  createContext({
 
 export const GeneralContextProvider = (props) => {
     const [isBuyWindowOpen, setIsBuyWindowOpen] = useState(false);
+    const [isSellWindowOpen, setIsSellWindowOpen] = useState(false);
     const [selectedStockUID, setSelectedStockUID] = useState("");
 
     const handleOpenBuyWindow = (uid) => {
@@ -46,6 +50,16 @@ export const GeneralContextProvider = (props) => {
         setSelectedStockUID("");
     };
 
+    const handleOpenSellWindow = (uid) => {
+        setIsSellWindowOpen(true);
+        setSelectedStockUID(uid);
+    };
+
+    const handleCloseSellWindow = () => {
+        setIsSellWindowOpen(false);
+        setSelectedStockUID("");
+    };
+
     return (
         // GeneralContext.Provider :- This is the Provider component created from our earlier createContext.
         // It makes values (openBuyWindow, closeBuyWindow) available to any child component that calls useContext(GeneralContext).
@@ -53,17 +67,22 @@ export const GeneralContextProvider = (props) => {
         // handleOpenBuyWindow → function that sets state to open the buy window for a given stock UID.
         // handleCloseBuyWindow → function that closes the buy window.
         // Any component inside this provider can call these functions without needing props.
-        <GeneralContext.Provider  value={{ openBuyWindow: handleOpenBuyWindow,  closeBuyWindow: handleCloseBuyWindow}}>
+        <GeneralContext.Provider value={{
+            openBuyWindow: handleOpenBuyWindow,
+            openSellWindow: handleOpenSellWindow,
+            closeBuyWindow: handleCloseBuyWindow,
+            closeSellWindow: handleCloseSellWindow,
+        }}>
             {/* {props.children} :- This renders whatever child components are wrapped inside this provider.
             e.g <GeneralProvider>
                     <Dashboard />
                     <StockList />
                 </GeneralProvider>
-            → Both Dashboard and StockList will be able to access openBuyWindow and closeBuyWindow via context. */}
+            → Both Dashboard and StockList will be able to access openBuyWindow and openSellWindow via context. */}
             {props.children}
 
-            {/* Here we will use this uid to identify which stocks buy button is currently clicked. */}
             {isBuyWindowOpen && <BuyActionWindow uid={selectedStockUID} />}
+            {isSellWindowOpen && <SellActionWindow uid={selectedStockUID} />}
         </GeneralContext.Provider>
     );
 };

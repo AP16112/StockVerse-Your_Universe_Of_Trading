@@ -30,11 +30,63 @@ import { KeyboardArrowUp, KeyboardArrowDown  } from '@mui/icons-material';
 // Now to use 'BarChartOutlined' and 'MoreHoriz' icons from Material UI, we will need to import them.
 import { BarChartOutlined, MoreHoriz } from '@mui/icons-material';
 
+import { DoughnutChart } from "./DoughnoutChart.jsx";
 
+
+// Extract labels for the chart from the watchlist array.
+// watchlist is assumed to be an array of objects, each representing a watchlist.
+// Example: [{ name: "Apple", price: 150 }, { name: "Tesla", price: 700 }]
+// We map over the array and pick out the "name" property for each stock.
+// These names will be displayed along the x-axis of the chart.
+const labels = watchlist.map((subArray) => subArray["name"]);
 
 export default function WatchList() {
 
-  return (
+    // Define the data object for Chart.js / react-chartjs-2.
+    // This contains both the labels (x-axis categories) and datasets (values to plot).
+    const data = {
+        // Labels for the x-axis (e.g., stock names).
+        labels,
+
+        // datasets is an array because you can plot multiple series on the same chart.
+        datasets: [
+            {
+                // Label for this dataset (shown in the legend).
+                label: "Price",
+
+                // Extract the price of each stock from the watchlist.
+                // This array of numbers will be plotted against the labels.
+                data: watchlist.map((stock) => stock.price),
+
+                // Background colors for each bar (semi-transparent).
+                // Each entry corresponds to one label/data point.
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.5)",   // red
+                    "rgba(54, 162, 235, 0.5)",   // blue
+                    "rgba(255, 206, 86, 0.5)",   // yellow
+                    "rgba(75, 192, 192, 0.5)",   // teal
+                    "rgba(153, 102, 255, 0.5)",  // purple
+                    "rgba(255, 159, 64, 0.5)",   // orange
+                ],
+
+                // Border colors for each bar (solid, non-transparent).
+                borderColor: [
+                    "rgba(255, 99, 132, 1)",     // red
+                    "rgba(54, 162, 235, 1)",     // blue
+                    "rgba(255, 206, 86, 1)",     // yellow
+                    "rgba(75, 192, 192, 1)",     // teal
+                    "rgba(153, 102, 255, 1)",    // purple
+                    "rgba(255, 159, 64, 1)",     // orange
+                ],
+
+                // Thickness of the bar borders.
+                borderWidth: 1,
+            },
+        ],
+    };
+
+
+    return (
     <div className="watchlist-container">
         <div className="search-container">
             <input type="text"  name="search"  id="search"  placeholder="Search eg:infy, bse, nifty fut weekly, gold mcx"  className="search"/>
@@ -52,6 +104,9 @@ export default function WatchList() {
                 );
             })}
         </ul>
+
+        {/* Here we are calling or rendering this component to show the Doughnut graph for watchlists */}
+        <DoughnutChart data={data} />
     </div>
   );
 }
@@ -142,7 +197,7 @@ const WatchListActions = ({ uid }) => {
                     <button className="buy" >Buy</button>
                 </Tooltip>
                 
-                <Tooltip  title="Sell (S)"   placement="top"    arrow    TransitionComponent={Grow}>
+                <Tooltip  title="Sell (S)"   placement="top"    arrow    TransitionComponent={Grow}  onClick={() => generalContext.openSellWindow(uid)}>
                     <button className="sell">Sell</button>
                 </Tooltip>
 

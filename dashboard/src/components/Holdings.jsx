@@ -16,6 +16,8 @@ import axios from "axios";
 // But before importing this axios library, we need to install it first using the command :- npm install axios
 
 
+import { VerticalGraph } from "./VerticalGraph.jsx";
+
 export default function Holdings() {
     // So here we are using the useState hook to create a state variable called 'allHoldings' and a function called 'setAllHoldings' to update that state variable. The initial value of 'allHoldings' is an empty array, which means that when the component first renders, there will be no holdings data to display. However, once we fetch the holdings data from our backend server using an API call, we will update the 'allHoldings' state variable with the fetched data, which will trigger a re-render of the component and display the updated holdings data in the dashboard.
     const [allHoldings, setAllHoldings] = useState([]);
@@ -56,6 +58,40 @@ export default function Holdings() {
     // useEffect(function printSomething() {
     //     console.log("This is a side-effect");
     // }, []); 
+
+
+
+    // Extract labels for the chart from the allHoldings array.
+    // allHoldings is assumed to be an array of objects, each representing a stock holding.
+    // Example: [{ name: "Apple", price: 150 }, { name: "Tesla", price: 700 }]
+    // We map over the array and pick out the "name" property for each stock.
+    // These names will be displayed along the x-axis of the chart.
+    const labels = allHoldings.map((subArray) => subArray["name"]);
+    // It will return a new array containing only the name property values from each object inside the allHoldings array.
+
+
+    // Define the data object for Chart.js / react-chartjs-2.
+    // This contains both the labels (x-axis) and datasets (y-axis values).
+    const data = {
+        // Labels for the x-axis (stock names).
+        labels,
+
+        // datasets is an array because you can plot multiple series on the same chart.
+        datasets: [
+            {
+                // Label for this dataset (shown in the legend).
+                label: "Stock Price",
+
+                // Extract the price of each stock from allHoldings.
+                // This array of numbers will be plotted against the labels.
+                data: allHoldings.map((stock) => stock.price),
+
+                // Background color of the bars in the chart.
+                // Here it's a semi-transparent red shade.
+                backgroundColor: "rgba(255, 99, 132, 0.5)",
+            },
+        ],
+    };
 
 
     return (
@@ -117,6 +153,9 @@ export default function Holdings() {
                 <p>P&L</p>
             </div>
         </div>
+
+        {/* Here we are calling this VerticalGraph component with 'data' as the prop so that it can show the vertical bar plot actually */}
+        <VerticalGraph data={data}/>
     </>
   );
 }
