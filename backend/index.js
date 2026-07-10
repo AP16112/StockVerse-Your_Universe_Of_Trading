@@ -147,7 +147,6 @@ app.use(bodyParser.json());
 
 
 
-
 // Now we will create the route for accessing all holdings data from the database
 // Here we are using the .get() method of the app object to define a route for the GET request to the /allHoldings endpoint. When a GET request is made to this endpoint, the callback function will be executed, which will retrieve all holdings data from the database using the HoldingsModel and send it back as a JSON response to the client. This allows us to access all holdings data from our MongoDB database through this API endpoint.
 // Here this callback fn is async because we are accessing the database to get the data, so it is necessary to make this callback fn as async because it will take some time to get the response from the database. So we will use async/await to handle this asynchronous process.
@@ -248,6 +247,8 @@ app.listen(port, () => {
 // nodemon index.js
 //------OR------
 // node index.js
+
+
 
 
 
