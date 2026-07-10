@@ -28,7 +28,7 @@ export default function Menu() {
     return (
         <div className="menu-container">
             {/* Here it will automatically look for the image in the 'public' folder */}
-            <img src="logo.png" style={{ width: "50px" }} />
+            <img src="logo.png" style={{ width: "20%" }} />
 
             <div className="menus">
                 <ul>
@@ -57,11 +57,7 @@ export default function Menu() {
                             <p className={selectedMenu === 3 ? activeMenuClass : menuClass}>Positions</p>
                         </Link>
                     </li>
-                    <li>
-                        <Link style={{ textDecoration: "none"}} to="/funds"  onClick={() => handleMenuCLick(4)}>
-                            <p className={selectedMenu === 4 ? activeMenuClass : menuClass}>Funds</p>
-                        </Link>
-                    </li>
+                    
                 </ul>
                 <hr />
                 <div className="profile" onClick={handleProfileClick}>

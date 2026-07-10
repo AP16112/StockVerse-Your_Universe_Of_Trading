@@ -7,7 +7,6 @@ import Summary from "./Summary.jsx";
 import Orders from "./Orders.jsx";
 import Holdings from "./Holdings.jsx";
 import Positions from "./Positions.jsx";
-import Funds from "./Funds.jsx";
 import WatchList from "./WatchList.jsx";
 
 // Here we are importing this GeneralContextProvider function or component to be used here.
@@ -45,7 +44,6 @@ export default function Dashboard() {
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/holdings" element={<Holdings />} />
                 <Route path="/positions" element={<Positions />} />
-                <Route path="/funds" element={<Funds />} />
             </Routes>
         </div>
     </div>
