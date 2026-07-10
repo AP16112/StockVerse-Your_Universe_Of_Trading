@@ -12,13 +12,17 @@ import { Tooltip, Grow } from "@mui/material";
 
 // Tooltips display informative text when users hover over, focus on, or tap an element.
 
-import { useState } from "react";
+// useContext :-
+// A React hook for consuming context values.
+// It allows us to access data/functions provided by a Context.Provider without prop drilling.
+import { useState, useContext } from "react";
 
 // Here we are importing the watchlist data from the data.js file. This data will be used to display the watch list items in our dashboard.
 // This is actually the dummy data that we will use to display the watch list items in our dashboard. In a real-world application, this data would typically come from an API or a database.
 // So later on we will replace this dummy data with real-time data fetched from an API or a database. For now, we will use this static data to develop and test our watch list component.
 import { watchlist } from "../data/data.js";
 
+import GeneralContext from "./GeneralContext.jsx";
 
 // Now to use these Material UI components, we will firstly need to import them.
 import { KeyboardArrowUp, KeyboardArrowDown  } from '@mui/icons-material';
@@ -29,7 +33,6 @@ import { BarChartOutlined, MoreHoriz } from '@mui/icons-material';
 
 
 export default function WatchList() {
-  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <div className="watchlist-container">
@@ -113,6 +116,16 @@ const WatchListItem = ({ stock }) => {
 // So we will create it as arrow function here, with props in it also.
 const WatchListActions = ({ uid }) => {
 
+    // useContext(GeneralContext) :-
+    // useContext is a React hook that lets you consume values/functions from a context.
+    // GeneralContext is the context object you created earlier with createContext.
+    // By calling useContext(GeneralContext), you get access to whatever values were passed into the provider’s value prop.
+    const generalContext = useContext(GeneralContext);
+
+    const handleBuyClick = () => {
+        generalContext.openBuyWindow(uid);
+    };
+
     return (
         <span className="actions">
             <span>
@@ -125,8 +138,8 @@ const WatchListActions = ({ uid }) => {
                 onClick={handleBuyClick} → Attaches a click handler to the tooltip wrapper. When the button is clicked, it triggers your handleBuyClick function.
                 <button className="buy">Buy</button> → The actual button being wrapped. The tooltip shows when you hover over this button. */}
                 {/* SO when we hover over this buy button, it will actually show this tooltip */}
-                <Tooltip title="Buy (B)"  placement="top"   arrow   TransitionComponent={Grow}>
-                    <button className="buy">Buy</button>
+                <Tooltip title="Buy (B)"  placement="top"   arrow   TransitionComponent={Grow}  onClick={handleBuyClick}>
+                    <button className="buy" >Buy</button>
                 </Tooltip>
                 
                 <Tooltip  title="Sell (S)"   placement="top"    arrow    TransitionComponent={Grow}>
