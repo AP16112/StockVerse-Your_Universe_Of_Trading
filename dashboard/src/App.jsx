@@ -216,3 +216,24 @@ export default App;
 // Asynchronous Operations like fetching data from DB or from mapbox or we are using google APIs etc.
 
 // So here we will create this Joker component which will print some joke & in that we will use API calls & look for how useEffect will be used in that.
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chart.js :-
+// Chart.js is a JavaScript charting library that lets you create interactive, responsive charts using HTML5 <canvas>.
+// Supports many chart types: line, bar, pie, doughnut, radar, polar area, bubble, scatter, etc.
+// Highly customizable (colors, labels, tooltips, animations).
+// Lightweight and easy to use.
+
+// But here we will use this 'react-chartjs-2' which is a React components for Chart.js, the most popular charting library.
+
+// react-chartjs-2 :-
+// react-chartjs-2 is a React wrapper around Chart.js.
+// Since Chart.js is vanilla JS, it doesn’t integrate directly with React’s component system.
+// react-chartjs-2 bridges that gap, letting you use Chart.js charts as React components.
+// Provides React components like <Line />, <Bar />, <Pie />, etc.
+// Works seamlessly with React state and props.
+// Makes charts declarative (you describe them in JSX instead of manually initializing with new Chart()).
+
+// But to use this react-chartjs-2, we firstly need to install this :-
+// npm install chart.js react-chartjs-2
+

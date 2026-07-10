@@ -1,0 +1,143 @@
+.sell-container {
+    --radius: 10px;
+    width: 42%;
+    max-width: 600px;
+    min-width: 320px;
+    background: #fff5f2;
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: move;
+    box-sizing: border-box;
+    z-index: 100;
+    border-radius: var(--radius);
+    border: 1px solid #f2b1a1;
+    box-shadow: 0 16px 34px rgba(157, 38, 25, 0.16);
+}
+
+.sell-header {
+    width: 100%;
+    background: #c93229;
+    color: #ffffff;
+    box-sizing: border-box;
+    padding: 18px 20px;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.sell-header h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.sell-header p {
+    margin: 0;
+    font-size: 0.86rem;
+    opacity: 0.9;
+}
+
+.sell-order {
+    padding: 24px 24px 20px;
+    background: #fff8f6;
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.inputs {
+    display: flex;
+    gap: 14px;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.inputs fieldset {
+    width: calc(50% - 7px);
+    border: 1px solid #f2b1a1;
+    border-radius: 10px;
+    padding: 12px 14px 10px;
+    background: #ffffff;
+}
+
+.inputs fieldset legend {
+    margin-left: 6px;
+    font-size: 0.86rem;
+    padding: 0 6px;
+    font-weight: 700;
+    color: #a2301f;
+    background: #fff5f2;
+}
+
+.inputs fieldset input {
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 8px 6px;
+    font-size: 1.05rem;
+    box-sizing: border-box;
+    color: #222;
+    background: transparent;
+}
+
+.sell-buttons {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0;
+    padding: 0 24px 18px;
+}
+
+.sell-buttons > div {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sell-buttons .hint {
+    color: #7f2a22;
+    font-size: 0.9rem;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-sell {
+    background: linear-gradient(180deg, #cf3a30, #a8271f);
+}
+
+.btn-grey {
+    background: #f3f4f6;
+    color: #333;
+    border: 1px solid #d8d8d8;
+}
+
+.btn-grey:hover {
+    background: #d7d9dc;
+    color: #222;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
