@@ -16,7 +16,6 @@ The project uses a separate React/Vite landing frontend (`frontend/`), a React/V
 
 - **Live Landing page Link:** https://stockverse-landing-page.vercel.app
 - **Live Dashboard Link:** https://stockverse-your-universe-of-trading.vercel.app
-- **Live backend Link:** https://stockverse-backend-r4og.onrender.com
 
 ## Overview
 
