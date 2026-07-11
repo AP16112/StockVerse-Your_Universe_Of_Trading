@@ -89,7 +89,7 @@ export default function WatchList() {
     return (
     <div className="watchlist-container">
         <div className="search-container">
-            <input type="text"  name="search"  id="search"  placeholder="Search eg:infy, bse, nifty fut weekly, gold mcx"  className="search"/>
+            <input type="text"  name="search"  id="search"  placeholder="Search e.g. INFY, BSE, Nifty Fut, Gold MCX"  className="search"/>
             <span className="counts"> {watchlist.length} / 50</span>
         </div>
 
