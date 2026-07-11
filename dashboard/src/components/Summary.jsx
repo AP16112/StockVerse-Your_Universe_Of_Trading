@@ -10,7 +10,7 @@ export default function Summary() {
     useEffect(() => {
         async function fetchHoldings() {
             try {
-                const res = await axios.get("http://localhost:8080/allHoldings");
+                const res = await axios.get("https://stockverse-backend-r4og.onrender.com/allHoldings");
                 const holdings = res.data || [];
                 const invested = holdings.reduce((s, h) => s + (h.avg || 0) * (h.qty || 0), 0);
                 const current = holdings.reduce((s, h) => s + (h.price || 0) * (h.qty || 0), 0);
