@@ -3,7 +3,7 @@
 // Here we need the schema that we defined in the HoldingsSchema.js file, so we will import it here. This will allow us to create a Mongoose model based on the holdingsSchema, which we can then use to interact with the holdings data in our database.
 const mongoose = require('mongoose');
 
-const { holdingsSchema } = require('../schemas/HoldingsSchema.js');
+const { holdingsSchema } = require('../schemas/holdingsSchema.js');
 
 // We generally take the name of model same as the name of the collection
 const HoldingsModel = mongoose.model("Holding", holdingsSchema);
