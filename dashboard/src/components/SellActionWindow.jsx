@@ -12,7 +12,7 @@ export default function SellActionWindow({ uid }) {
     const [stockPrice, setStockPrice] = useState(0.0);
 
     const handleSellClick = () => {
-        axios.post("http://localhost:8080/newOrder", {
+        axios.post("https://stockverse-backend-r4og.onrender.com/newOrder", {
             name: uid,
             qty: stockQuantity,
             price: stockPrice,

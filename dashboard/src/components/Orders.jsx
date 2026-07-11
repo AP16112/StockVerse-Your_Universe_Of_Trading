@@ -8,7 +8,7 @@ export default function Orders() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/orders")
+    axios.get("https://stockverse-backend-r4og.onrender.com/orders")
       .then((res) => setOrders(res.data || []))
       .catch((err) => console.error("Error fetching orders", err));
   }, []);
