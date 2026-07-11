@@ -27,7 +27,7 @@
 
                         <div className="text-center">
                             {/* Here class 'mx-5' means margin along horizontal axis i.e margin-left: 1.25rem and margin-right: 1.25rem.*/}
-                            <a href="" className="mx-5"  style={{textDecoration:"none", color:'#387ed1', fontWeight:'500'}}  >Try StockVerse <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://stockverse-your-universe-of-trading.vercel.app" className="mx-5"  style={{textDecoration:"none", color:'#387ed1', fontWeight:'500'}}  >Try StockVerse <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

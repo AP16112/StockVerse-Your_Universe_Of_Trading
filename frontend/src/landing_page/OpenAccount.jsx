@@ -11,7 +11,7 @@ export default function OpenAccount() {
                 <p>Modern platforms with simple investing in stocks.</p>
                 {/* To apply inline styles, we can use the 'style' attribute and pass a JavaScript object with CSS properties. But As we know to pass a JavaScript object to the 'style' attribute, we need to use double curly braces {{}} i.e one for the JS object & one for the CSS properties */}
                 <div className="try-cta mt-4" style={{margin: '0 auto', width: '25%'}}>
-                    <Link to="/signup" className="try-link">Try StockVerse</Link>
+                    <a href="https://stockverse-your-universe-of-trading.vercel.app" className="try-link">Try StockVerse</a>
                 </div>
             </div>
         </div>

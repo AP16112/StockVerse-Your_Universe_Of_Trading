@@ -22,7 +22,7 @@ export default function HeroSection() {
                     <h1 className="mt-5 pt-4 fs-2 ">Grow Your Wealth, All in One Place</h1>
                     <p className="mb-4 fs-5">StockVerse - simple investing in stocks.</p>
                     <div className="try-cta mt-4 mx-auto" style={{maxWidth: '240px'}}>
-                        <Link to="/signup" className="try-link">Try StockVerse</Link>
+                        <a href="https://stockverse-your-universe-of-trading.vercel.app" className="try-link">Try StockVerse</a>
                     </div>
                 </div>
             </div>

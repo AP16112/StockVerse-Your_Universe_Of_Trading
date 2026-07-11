@@ -26,7 +26,7 @@ export default function HeroSection() {
                         The site includes sample datasets, demo flows, and educational notes to help you explore product design and technical patterns used by trading platforms.
                     </p>
                     <p>
-                        For full details, see the <a href="" style={{ textDecoration: "none", color:'#387ed1' }}>project codes</a>.
+                        For full details, see the <a href="https://github.com/AP16112/StockVerse-Your_Universe_Of_Trading" style={{ textDecoration: "none", color:'#387ed1' }}>project codes</a>.
                     </p>
                 </div>
             </div>
